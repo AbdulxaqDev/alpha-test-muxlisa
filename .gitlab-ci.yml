@@ -1,0 +1,56 @@
+stages:
+  - lint
+  - build
+  - test
+  - deploy
+
+# eslint:
+#   stage: lint
+#   tags:
+#     - lint
+#   image: node
+#   script:
+#     # Install eslint
+#     - |
+#       npm i eslint \
+#       eslint-config-airbnb \
+#       eslint-config-prettier \
+#       eslint-plugin-flowtype \
+#       eslint-plugin-import \
+#       eslint-plugin-jsx-a11y \
+#       eslint-plugin-prettier \
+#       eslint-plugin-react
+#     # Run eslint
+#     - node_modules/eslint/bin/eslint.js .
+
+build-job:
+  stage: build
+  only:
+      - master
+  tags:
+    - stag
+  variables:
+    GIT_STRATEGY: none
+  before_script:
+    - git -C $PROJECT_PATH pull
+    - cd $PROJECT_PATH && npm install
+  script:
+    - echo "Compiling the code..."
+    - cd $PROJECT_PATH && DISABLE_ESLINT_PLUGIN=true GENERATE_SOURCEMAP=false npm run build
+    - echo "Compile complete."
+
+deploy-job:
+  stage: deploy
+  tags:
+    - prod
+  only:
+    - master
+  variables:
+    GIT_STRATEGY: none
+  before_script:
+    - git -C $PROJECT_PATH pull
+    - cd $PROJECT_PATH && npm install
+  script:
+    - echo "Deploying application..."
+    - cp -r $PROJECT_PATH/build/* $TARGET_PATH
+    - echo "Application successfully deployed."

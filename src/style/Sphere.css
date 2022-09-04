@@ -1,0 +1,10 @@
+.canvas{
+  margin: 0;
+  position: absolute;
+  top: -5%;
+  left: 38%;
+  /* border: red solid 1px; */
+  height: 600px;
+  width: 600px;
+  border: red solid 1px;
+}
