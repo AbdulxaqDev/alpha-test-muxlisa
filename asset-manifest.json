@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/alpha-test-muxlisa/static/css/main.ef0d8de0.css",
+    "main.js": "/alpha-test-muxlisa/static/js/main.43466fe9.js",
+    "static/js/787.06f77038.chunk.js": "/alpha-test-muxlisa/static/js/787.06f77038.chunk.js",
+    "static/media/wowGirl.gif": "/alpha-test-muxlisa/static/media/wowGirl.57701fdd33837d1b5044.gif",
+    "static/media/girl.jpg": "/alpha-test-muxlisa/static/media/girl.08e348d57362cb8ca9a0.jpg",
+    "static/media/ringtone.mp3": "/alpha-test-muxlisa/static/media/ringtone.45a10e9f7b6ce6f405c4.mp3",
+    "index.html": "/alpha-test-muxlisa/index.html",
+    "main.ef0d8de0.css.map": "/alpha-test-muxlisa/static/css/main.ef0d8de0.css.map",
+    "main.43466fe9.js.map": "/alpha-test-muxlisa/static/js/main.43466fe9.js.map",
+    "787.06f77038.chunk.js.map": "/alpha-test-muxlisa/static/js/787.06f77038.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef0d8de0.css",
+    "static/js/main.43466fe9.js"
+  ]
+}
